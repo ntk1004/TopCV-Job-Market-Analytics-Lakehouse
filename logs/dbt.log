@@ -1,0 +1,488 @@
+[0m04:27:42.758183 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001492A631570>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001492C9EBBB0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001492C9EBDC0>]}
+
+
+============================== 04:27:42.923326 | dcd9082e-29a9-4f5a-89d7-1447ab819630 ==============================
+[0m04:27:42.923326 [info ] [MainThread]: Running with dbt=1.11.7
+[0m04:27:42.924313 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'None', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\ditch\\.dbt', 'indirect_selection': 'eager', 'invocation_command': 'dbt init', 'use_colors': 'True', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m04:27:43.557616 [info ] [MainThread]: Creating dbt configuration folder at C:\Users\ditch\.dbt
+[0m04:28:31.213346 [debug] [MainThread]: Starter project path: K:\job_ete\.venv\lib\site-packages\dbt\include\starter_project
+[0m04:28:31.348793 [info ] [MainThread]: 
+Your new dbt project "dbt_job" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m04:28:31.349781 [info ] [MainThread]: Setting up your profile.
+[0m04:28:49.867946 [debug] [MainThread]: Spark adapter: Setting pyhive.hive logging to ERROR
+[0m04:28:49.868856 [debug] [MainThread]: Spark adapter: Setting thrift.transport logging to ERROR
+[0m04:28:49.869954 [debug] [MainThread]: Spark adapter: Setting thrift.protocol logging to ERROR
+[0m04:36:22.806847 [error] [MainThread]: Encountered an error:
+
+[0m04:36:22.811957 [error] [MainThread]: Traceback (most recent call last):
+  File "K:\job_ete\.venv\lib\site-packages\dbt\cli\requires.py", line 182, in wrapper
+    result, success = func(*args, **kwargs)
+  File "K:\job_ete\.venv\lib\site-packages\dbt\cli\requires.py", line 128, in wrapper
+    return func(*args, **kwargs)
+  File "K:\job_ete\.venv\lib\site-packages\dbt\cli\main.py", line 483, in init
+    results = task.run()
+  File "K:\job_ete\.venv\lib\site-packages\dbt\task\init.py", line 346, in run
+    self.setup_profile(profile_name)
+  File "K:\job_ete\.venv\lib\site-packages\dbt\task\init.py", line 262, in setup_profile
+    self.create_profile_from_target(adapter, profile_name=profile_name)
+  File "K:\job_ete\.venv\lib\site-packages\dbt\task\init.py", line 179, in create_profile_from_target
+    self.create_profile_from_profile_template(profile_template, profile_name)
+  File "K:\job_ete\.venv\lib\site-packages\dbt\task\init.py", line 163, in create_profile_from_profile_template
+    target = self.generate_target_from_input(prompts, initial_target)
+  File "K:\job_ete\.venv\lib\site-packages\dbt\task\init.py", line 129, in generate_target_from_input
+    target[key] = click.prompt(
+  File "K:\job_ete\.venv\lib\site-packages\click\termui.py", line 171, in prompt
+    value = prompt_func(prompt)
+  File "K:\job_ete\.venv\lib\site-packages\click\termui.py", line 154, in prompt_func
+    raise Abort() from None
+click.exceptions.Abort
+
+[0m04:36:22.814907 [debug] [MainThread]: Command `dbt init` failed at 04:36:22.814907 after 520.16 seconds
+[0m04:36:22.816525 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001492A631570>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001494F426230>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001494F426CB0>]}
+[0m04:36:22.818647 [debug] [MainThread]: Flushing usage events
+[0m04:36:24.452051 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m04:36:31.136531 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017D24E60970>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017D26117EB0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017D26117C40>]}
+
+
+============================== 04:36:31.140536 | fe2bb5b8-2c1f-4e4b-9759-0022751619da ==============================
+[0m04:36:31.140536 [info ] [MainThread]: Running with dbt=1.11.7
+[0m04:36:31.141536 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'empty': 'None', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\ditch\\.dbt', 'invocation_command': 'dbt init', 'use_colors': 'True', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m04:36:48.457918 [debug] [MainThread]: Starter project path: K:\job_ete\.venv\lib\site-packages\dbt\include\starter_project
+[0m04:36:48.475335 [info ] [MainThread]: 
+Your new dbt project "dbt_job" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m04:36:48.477376 [info ] [MainThread]: Setting up your profile.
+[0m04:36:51.462641 [debug] [MainThread]: Spark adapter: Setting pyhive.hive logging to ERROR
+[0m04:36:51.463688 [debug] [MainThread]: Spark adapter: Setting thrift.transport logging to ERROR
+[0m04:36:51.464622 [debug] [MainThread]: Spark adapter: Setting thrift.protocol logging to ERROR
+[0m04:37:58.688016 [info ] [MainThread]: Profile dbt_job written to C:\Users\ditch\.dbt\profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m04:37:58.690022 [debug] [MainThread]: Command `dbt init` succeeded at 04:37:58.689022 after 87.68 seconds
+[0m04:37:58.690022 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017D24E60970>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017D26117BE0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017D26117C70>]}
+[0m04:37:58.691023 [debug] [MainThread]: Flushing usage events
+[0m04:37:59.786589 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m04:20:41.313422 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x795c8173b970>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x795c808d3460>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x795c808d14e0>]}
+
+
+============================== 04:20:41.386611 | ca0be97a-ca55-488d-8004-4af3315170d5 ==============================
+[0m04:20:41.386611 [info ] [MainThread]: Running with dbt=1.11.7
+[0m04:20:41.388439 [debug] [MainThread]: running dbt with arguments {'target_path': 'None', 'indirect_selection': 'eager', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'log_format': 'default', 'log_cache_events': 'False', 'invocation_command': 'dbt init', 'write_json': 'True', 'send_anonymous_usage_stats': 'True', 'log_path': 'logs', 'use_colors': 'True', 'version_check': 'True', 'fail_fast': 'False', 'printer_width': '80', 'profiles_dir': '/home/ntk04/.dbt', 'use_experimental_parser': 'False', 'partial_parse': 'True', 'static_parser': 'True', 'quiet': 'False', 'empty': 'None', 'debug': 'False', 'cache_selected_only': 'False', 'introspect': 'True', 'warn_error': 'None'}
+[0m04:20:54.515889 [debug] [MainThread]: Starter project path: /mnt/k/job_ete/.venv/lib/python3.10/site-packages/dbt/include/starter_project
+[0m04:20:55.293458 [info ] [MainThread]: 
+Your new dbt project "dbt_job" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m04:20:55.295211 [info ] [MainThread]: Setting up your profile.
+[0m04:20:58.546271 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No adapters available. Learn how to install an adapter by going to https://docs.getdbt.com/docs/connect-adapters#install-using-the-cli
+[0m04:20:58.555221 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": false, "command_wall_clock_time": 20.06027, "process_in_blocks": "13128", "process_kernel_time": 2.511755, "process_mem_max_rss": "111152", "process_out_blocks": "0", "process_user_time": 4.549373}
+[0m04:20:58.557307 [debug] [MainThread]: Command `dbt init` failed at 04:20:58.557137 after 20.06 seconds
+[0m04:20:58.559445 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x795c8173b970>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x795c8054f6d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x795c8054faf0>]}
+[0m04:20:58.562504 [debug] [MainThread]: Flushing usage events
+[0m04:21:00.674342 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m04:22:34.815666 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a6a4fe532e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a6a4ec08970>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a6a4ec08910>]}
+
+
+============================== 04:22:34.825111 | 02261e56-c83e-4e6f-8125-a36b7c938cc9 ==============================
+[0m04:22:34.825111 [info ] [MainThread]: Running with dbt=1.11.7
+[0m04:22:34.826326 [debug] [MainThread]: running dbt with arguments {'use_experimental_parser': 'False', 'indirect_selection': 'eager', 'log_path': 'logs', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'cache_selected_only': 'False', 'invocation_command': 'dbt init', 'version_check': 'True', 'static_parser': 'True', 'write_json': 'True', 'introspect': 'True', 'log_format': 'default', 'partial_parse': 'True', 'target_path': 'None', 'printer_width': '80', 'warn_error': 'None', 'profiles_dir': '/home/ntk04/.dbt', 'empty': 'None', 'fail_fast': 'False', 'debug': 'False', 'quiet': 'False', 'use_colors': 'True', 'no_print': 'None', 'log_cache_events': 'False', 'send_anonymous_usage_stats': 'True'}
+[0m04:22:39.784717 [debug] [MainThread]: Starter project path: /mnt/k/job_ete/.venv/lib/python3.10/site-packages/dbt/include/starter_project
+[0m04:22:40.485886 [info ] [MainThread]: 
+Your new dbt project "dbt_job" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m04:22:40.489846 [info ] [MainThread]: Setting up your profile.
+[0m04:22:43.589681 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No adapters available. Learn how to install an adapter by going to https://docs.getdbt.com/docs/connect-adapters#install-using-the-cli
+[0m04:22:43.595768 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": false, "command_wall_clock_time": 11.580794, "process_in_blocks": "9176", "process_kernel_time": 0.969781, "process_mem_max_rss": "96260", "process_out_blocks": "0", "process_user_time": 2.018805}
+[0m04:22:43.597882 [debug] [MainThread]: Command `dbt init` failed at 04:22:43.597672 after 11.58 seconds
+[0m04:22:43.599727 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a6a4fe532e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a6a4ec09990>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a6a4ec091e0>]}
+[0m04:22:43.601471 [debug] [MainThread]: Flushing usage events
+[0m04:22:45.105031 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m21:40:42.138744 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d5193b29690>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d51931aadd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d51931a9570>]}
+
+
+============================== 21:40:42.205980 | 6d3911ba-f50b-40f1-a95a-6db171740dfc ==============================
+[0m21:40:42.205980 [info ] [MainThread]: Running with dbt=1.11.7
+[0m21:40:42.207959 [debug] [MainThread]: running dbt with arguments {'log_path': 'logs', 'log_format': 'default', 'indirect_selection': 'eager', 'target_path': 'None', 'version_check': 'True', 'introspect': 'True', 'cache_selected_only': 'False', 'use_colors': 'True', 'debug': 'False', 'partial_parse': 'True', 'warn_error': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'send_anonymous_usage_stats': 'True', 'empty': 'None', 'static_parser': 'True', 'invocation_command': 'dbt init', 'fail_fast': 'False', 'write_json': 'True', 'log_cache_events': 'False', 'quiet': 'False', 'no_print': 'None', 'use_experimental_parser': 'False', 'profiles_dir': '/home/ntk04/.dbt'}
+[0m21:45:41.011815 [debug] [MainThread]: Starter project path: /mnt/k/job_ete/.venv/lib/python3.10/site-packages/dbt/include/starter_project
+[0m21:45:41.665997 [info ] [MainThread]: 
+Your new dbt project "dbt_job_analytics" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m21:45:41.668921 [info ] [MainThread]: Setting up your profile.
+[0m21:45:59.341142 [debug] [MainThread]: Spark adapter: Setting pyhive.hive logging to ERROR
+[0m21:45:59.342459 [debug] [MainThread]: Spark adapter: Setting thrift.transport logging to ERROR
+[0m21:45:59.343594 [debug] [MainThread]: Spark adapter: Setting thrift.protocol logging to ERROR
+[0m21:46:03.207821 [error] [MainThread]: Encountered an error:
+numpy.dtype size changed, may indicate binary incompatibility. Expected 96 from C header, got 88 from PyObject
+[0m21:46:03.354446 [error] [MainThread]: Traceback (most recent call last):
+  File "/mnt/k/job_ete/.venv/lib/python3.10/site-packages/dbt/cli/requires.py", line 182, in wrapper
+    result, success = func(*args, **kwargs)
+  File "/mnt/k/job_ete/.venv/lib/python3.10/site-packages/dbt/cli/requires.py", line 128, in wrapper
+    return func(*args, **kwargs)
+  File "/mnt/k/job_ete/.venv/lib/python3.10/site-packages/dbt/cli/main.py", line 483, in init
+    results = task.run()
+  File "/mnt/k/job_ete/.venv/lib/python3.10/site-packages/dbt/task/init.py", line 346, in run
+    self.setup_profile(profile_name)
+  File "/mnt/k/job_ete/.venv/lib/python3.10/site-packages/dbt/task/init.py", line 262, in setup_profile
+    self.create_profile_from_target(adapter, profile_name=profile_name)
+  File "/mnt/k/job_ete/.venv/lib/python3.10/site-packages/dbt/task/init.py", line 172, in create_profile_from_target
+    load_plugin(adapter)
+  File "/mnt/k/job_ete/.venv/lib/python3.10/site-packages/dbt/adapters/factory.py", line 239, in load_plugin
+    return FACTORY.load_plugin(name)
+  File "/mnt/k/job_ete/.venv/lib/python3.10/site-packages/dbt/adapters/factory.py", line 68, in load_plugin
+    mod: Any = import_module("." + name, "dbt.adapters")
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/mnt/k/job_ete/.venv/lib/python3.10/site-packages/dbt/adapters/databricks/__init__.py", line 3, in <module>
+    from dbt.adapters.databricks.impl import DatabricksAdapter
+  File "/mnt/k/job_ete/.venv/lib/python3.10/site-packages/dbt/adapters/databricks/impl.py", line 34, in <module>
+    from dbt.adapters.databricks.connections import DatabricksConnectionManager
+  File "/mnt/k/job_ete/.venv/lib/python3.10/site-packages/dbt/adapters/databricks/connections.py", line 32, in <module>
+    from dbt.adapters.databricks.events.connection_events import (
+  File "/mnt/k/job_ete/.venv/lib/python3.10/site-packages/dbt/adapters/databricks/events/connection_events.py", line 4, in <module>
+    from databricks.sql.client import Connection
+  File "/mnt/k/job_ete/.venv/lib/python3.10/site-packages/databricks/sql/client.py", line 4, in <module>
+    import pandas
+  File "/mnt/k/job_ete/.venv/lib/python3.10/site-packages/pandas/__init__.py", line 22, in <module>
+    from pandas.compat import is_numpy_dev as _is_numpy_dev  # pyright: ignore # noqa:F401
+  File "/mnt/k/job_ete/.venv/lib/python3.10/site-packages/pandas/compat/__init__.py", line 25, in <module>
+    from pandas.compat.numpy import (
+  File "/mnt/k/job_ete/.venv/lib/python3.10/site-packages/pandas/compat/numpy/__init__.py", line 4, in <module>
+    from pandas.util.version import Version
+  File "/mnt/k/job_ete/.venv/lib/python3.10/site-packages/pandas/util/__init__.py", line 2, in <module>
+    from pandas.util._decorators import (  # noqa:F401
+  File "/mnt/k/job_ete/.venv/lib/python3.10/site-packages/pandas/util/_decorators.py", line 14, in <module>
+    from pandas._libs.properties import cache_readonly
+  File "/mnt/k/job_ete/.venv/lib/python3.10/site-packages/pandas/_libs/__init__.py", line 13, in <module>
+    from pandas._libs.interval import Interval
+  File "pandas/_libs/interval.pyx", line 1, in init pandas._libs.interval
+ValueError: numpy.dtype size changed, may indicate binary incompatibility. Expected 96 from C header, got 88 from PyObject
+
+[0m21:46:03.363622 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": false, "command_wall_clock_time": 354.08154, "process_in_blocks": "37168", "process_kernel_time": 3.105452, "process_mem_max_rss": "142788", "process_out_blocks": "0", "process_user_time": 6.400031}
+[0m21:46:03.366887 [debug] [MainThread]: Command `dbt init` failed at 21:46:03.366517 after 354.09 seconds
+[0m21:46:03.369930 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d5193b29690>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d518e381090>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d518e3a6d40>]}
+[0m21:46:03.373146 [debug] [MainThread]: Flushing usage events
+[0m21:46:04.711508 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m21:59:04.883014 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e0d25135390>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e0d24f86860>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e0d25126800>]}
+
+
+============================== 21:59:04.963278 | 632a6f23-b798-49fa-978c-1e4a8917a01f ==============================
+[0m21:59:04.963278 [info ] [MainThread]: Running with dbt=1.11.7
+[0m21:59:04.966092 [debug] [MainThread]: running dbt with arguments {'use_colors': 'True', 'no_print': 'None', 'partial_parse': 'True', 'quiet': 'False', 'write_json': 'True', 'debug': 'False', 'profiles_dir': '/home/ntk04/.dbt', 'indirect_selection': 'eager', 'warn_error': 'None', 'printer_width': '80', 'log_cache_events': 'False', 'cache_selected_only': 'False', 'introspect': 'True', 'fail_fast': 'False', 'target_path': 'None', 'version_check': 'True', 'invocation_command': 'dbt init', 'use_experimental_parser': 'False', 'log_format': 'default', 'static_parser': 'True', 'empty': 'None', 'send_anonymous_usage_stats': 'True', 'log_path': 'logs', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])'}
+[0m22:00:19.815871 [debug] [MainThread]: Starter project path: /mnt/k/job_ete/.venv/lib/python3.10/site-packages/dbt/include/starter_project
+[0m22:00:20.438568 [info ] [MainThread]: 
+Your new dbt project "dbt_job_analytics" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m22:00:20.440558 [info ] [MainThread]: Setting up your profile.
+[0m22:00:36.891030 [debug] [MainThread]: Spark adapter: Setting pyhive.hive logging to ERROR
+[0m22:00:36.893402 [debug] [MainThread]: Spark adapter: Setting thrift.transport logging to ERROR
+[0m22:00:36.895358 [debug] [MainThread]: Spark adapter: Setting thrift.protocol logging to ERROR
+[0m22:00:41.466627 [error] [MainThread]: Encountered an error:
+numpy.dtype size changed, may indicate binary incompatibility. Expected 96 from C header, got 88 from PyObject
+[0m22:00:41.574883 [error] [MainThread]: Traceback (most recent call last):
+  File "/mnt/k/job_ete/.venv/lib/python3.10/site-packages/dbt/cli/requires.py", line 182, in wrapper
+    result, success = func(*args, **kwargs)
+  File "/mnt/k/job_ete/.venv/lib/python3.10/site-packages/dbt/cli/requires.py", line 128, in wrapper
+    return func(*args, **kwargs)
+  File "/mnt/k/job_ete/.venv/lib/python3.10/site-packages/dbt/cli/main.py", line 483, in init
+    results = task.run()
+  File "/mnt/k/job_ete/.venv/lib/python3.10/site-packages/dbt/task/init.py", line 346, in run
+    self.setup_profile(profile_name)
+  File "/mnt/k/job_ete/.venv/lib/python3.10/site-packages/dbt/task/init.py", line 262, in setup_profile
+    self.create_profile_from_target(adapter, profile_name=profile_name)
+  File "/mnt/k/job_ete/.venv/lib/python3.10/site-packages/dbt/task/init.py", line 172, in create_profile_from_target
+    load_plugin(adapter)
+  File "/mnt/k/job_ete/.venv/lib/python3.10/site-packages/dbt/adapters/factory.py", line 239, in load_plugin
+    return FACTORY.load_plugin(name)
+  File "/mnt/k/job_ete/.venv/lib/python3.10/site-packages/dbt/adapters/factory.py", line 68, in load_plugin
+    mod: Any = import_module("." + name, "dbt.adapters")
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/mnt/k/job_ete/.venv/lib/python3.10/site-packages/dbt/adapters/databricks/__init__.py", line 3, in <module>
+    from dbt.adapters.databricks.impl import DatabricksAdapter
+  File "/mnt/k/job_ete/.venv/lib/python3.10/site-packages/dbt/adapters/databricks/impl.py", line 34, in <module>
+    from dbt.adapters.databricks.connections import DatabricksConnectionManager
+  File "/mnt/k/job_ete/.venv/lib/python3.10/site-packages/dbt/adapters/databricks/connections.py", line 32, in <module>
+    from dbt.adapters.databricks.events.connection_events import (
+  File "/mnt/k/job_ete/.venv/lib/python3.10/site-packages/dbt/adapters/databricks/events/connection_events.py", line 4, in <module>
+    from databricks.sql.client import Connection
+  File "/mnt/k/job_ete/.venv/lib/python3.10/site-packages/databricks/sql/client.py", line 4, in <module>
+    import pandas
+  File "/mnt/k/job_ete/.venv/lib/python3.10/site-packages/pandas/__init__.py", line 22, in <module>
+    from pandas.compat import is_numpy_dev as _is_numpy_dev  # pyright: ignore # noqa:F401
+  File "/mnt/k/job_ete/.venv/lib/python3.10/site-packages/pandas/compat/__init__.py", line 25, in <module>
+    from pandas.compat.numpy import (
+  File "/mnt/k/job_ete/.venv/lib/python3.10/site-packages/pandas/compat/numpy/__init__.py", line 4, in <module>
+    from pandas.util.version import Version
+  File "/mnt/k/job_ete/.venv/lib/python3.10/site-packages/pandas/util/__init__.py", line 2, in <module>
+    from pandas.util._decorators import (  # noqa:F401
+  File "/mnt/k/job_ete/.venv/lib/python3.10/site-packages/pandas/util/_decorators.py", line 14, in <module>
+    from pandas._libs.properties import cache_readonly
+  File "/mnt/k/job_ete/.venv/lib/python3.10/site-packages/pandas/_libs/__init__.py", line 13, in <module>
+    from pandas._libs.interval import Interval
+  File "pandas/_libs/interval.pyx", line 1, in init pandas._libs.interval
+ValueError: numpy.dtype size changed, may indicate binary incompatibility. Expected 96 from C header, got 88 from PyObject
+
+[0m22:00:41.580966 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": false, "command_wall_clock_time": 104.91624, "process_in_blocks": "37064", "process_kernel_time": 2.943892, "process_mem_max_rss": "142812", "process_out_blocks": "0", "process_user_time": 6.162445}
+[0m22:00:41.583559 [debug] [MainThread]: Command `dbt init` failed at 22:00:41.583340 after 104.92 seconds
+[0m22:00:41.585025 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e0d25135390>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e0d220d0760>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e0d220d0700>]}
+[0m22:00:41.587434 [debug] [MainThread]: Flushing usage events
+[0m22:00:42.959447 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m22:02:33.480209 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70e31e78c940>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70e31d91ba00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70e31d91b9a0>]}
+
+
+============================== 22:02:33.495502 | ec5a4d11-003a-4353-825c-0d2d991dc485 ==============================
+[0m22:02:33.495502 [info ] [MainThread]: Running with dbt=1.11.7
+[0m22:02:33.497070 [debug] [MainThread]: running dbt with arguments {'write_json': 'True', 'target_path': 'None', 'profiles_dir': '/home/ntk04/.dbt', 'static_parser': 'True', 'printer_width': '80', 'no_print': 'None', 'use_experimental_parser': 'False', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'log_format': 'default', 'warn_error': 'None', 'version_check': 'True', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'cache_selected_only': 'False', 'partial_parse': 'True', 'introspect': 'True', 'log_path': 'logs', 'debug': 'False', 'fail_fast': 'False', 'use_colors': 'True', 'invocation_command': 'dbt init', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'empty': 'None'}
+[0m22:02:37.646601 [debug] [MainThread]: Starter project path: /mnt/k/job_ete/.venv/lib/python3.10/site-packages/dbt/include/starter_project
+[0m22:02:38.296280 [info ] [MainThread]: 
+Your new dbt project "dbt_job_analytics" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m22:02:38.298522 [info ] [MainThread]: Setting up your profile.
+[0m22:02:46.608976 [debug] [MainThread]: Spark adapter: Setting pyhive.hive logging to ERROR
+[0m22:02:46.611262 [debug] [MainThread]: Spark adapter: Setting thrift.transport logging to ERROR
+[0m22:02:46.612581 [debug] [MainThread]: Spark adapter: Setting thrift.protocol logging to ERROR
+[0m22:02:47.547106 [error] [MainThread]: Encountered an error:
+numpy.dtype size changed, may indicate binary incompatibility. Expected 96 from C header, got 88 from PyObject
+[0m22:02:47.654779 [error] [MainThread]: Traceback (most recent call last):
+  File "/mnt/k/job_ete/.venv/lib/python3.10/site-packages/dbt/cli/requires.py", line 182, in wrapper
+    result, success = func(*args, **kwargs)
+  File "/mnt/k/job_ete/.venv/lib/python3.10/site-packages/dbt/cli/requires.py", line 128, in wrapper
+    return func(*args, **kwargs)
+  File "/mnt/k/job_ete/.venv/lib/python3.10/site-packages/dbt/cli/main.py", line 483, in init
+    results = task.run()
+  File "/mnt/k/job_ete/.venv/lib/python3.10/site-packages/dbt/task/init.py", line 346, in run
+    self.setup_profile(profile_name)
+  File "/mnt/k/job_ete/.venv/lib/python3.10/site-packages/dbt/task/init.py", line 262, in setup_profile
+    self.create_profile_from_target(adapter, profile_name=profile_name)
+  File "/mnt/k/job_ete/.venv/lib/python3.10/site-packages/dbt/task/init.py", line 172, in create_profile_from_target
+    load_plugin(adapter)
+  File "/mnt/k/job_ete/.venv/lib/python3.10/site-packages/dbt/adapters/factory.py", line 239, in load_plugin
+    return FACTORY.load_plugin(name)
+  File "/mnt/k/job_ete/.venv/lib/python3.10/site-packages/dbt/adapters/factory.py", line 68, in load_plugin
+    mod: Any = import_module("." + name, "dbt.adapters")
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/mnt/k/job_ete/.venv/lib/python3.10/site-packages/dbt/adapters/databricks/__init__.py", line 3, in <module>
+    from dbt.adapters.databricks.impl import DatabricksAdapter
+  File "/mnt/k/job_ete/.venv/lib/python3.10/site-packages/dbt/adapters/databricks/impl.py", line 34, in <module>
+    from dbt.adapters.databricks.connections import DatabricksConnectionManager
+  File "/mnt/k/job_ete/.venv/lib/python3.10/site-packages/dbt/adapters/databricks/connections.py", line 32, in <module>
+    from dbt.adapters.databricks.events.connection_events import (
+  File "/mnt/k/job_ete/.venv/lib/python3.10/site-packages/dbt/adapters/databricks/events/connection_events.py", line 4, in <module>
+    from databricks.sql.client import Connection
+  File "/mnt/k/job_ete/.venv/lib/python3.10/site-packages/databricks/sql/client.py", line 4, in <module>
+    import pandas
+  File "/mnt/k/job_ete/.venv/lib/python3.10/site-packages/pandas/__init__.py", line 22, in <module>
+    from pandas.compat import is_numpy_dev as _is_numpy_dev  # pyright: ignore # noqa:F401
+  File "/mnt/k/job_ete/.venv/lib/python3.10/site-packages/pandas/compat/__init__.py", line 25, in <module>
+    from pandas.compat.numpy import (
+  File "/mnt/k/job_ete/.venv/lib/python3.10/site-packages/pandas/compat/numpy/__init__.py", line 4, in <module>
+    from pandas.util.version import Version
+  File "/mnt/k/job_ete/.venv/lib/python3.10/site-packages/pandas/util/__init__.py", line 2, in <module>
+    from pandas.util._decorators import (  # noqa:F401
+  File "/mnt/k/job_ete/.venv/lib/python3.10/site-packages/pandas/util/_decorators.py", line 14, in <module>
+    from pandas._libs.properties import cache_readonly
+  File "/mnt/k/job_ete/.venv/lib/python3.10/site-packages/pandas/_libs/__init__.py", line 13, in <module>
+    from pandas._libs.interval import Interval
+  File "pandas/_libs/interval.pyx", line 1, in init pandas._libs.interval
+ValueError: numpy.dtype size changed, may indicate binary incompatibility. Expected 96 from C header, got 88 from PyObject
+
+[0m22:02:47.659537 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": false, "command_wall_clock_time": 17.039162, "process_in_blocks": "37064", "process_kernel_time": 1.44078, "process_mem_max_rss": "136604", "process_out_blocks": "0", "process_user_time": 3.245588}
+[0m22:02:47.662092 [debug] [MainThread]: Command `dbt init` failed at 22:02:47.661851 after 17.04 seconds
+[0m22:02:47.664300 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70e31e78c940>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70e30f5cfca0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70e30f59ed10>]}
+[0m22:02:47.665701 [debug] [MainThread]: Flushing usage events
+[0m22:02:49.259038 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m22:11:16.939541 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b1d28660b50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b1d27775750>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b1d27777b20>]}
+
+
+============================== 22:11:17.027459 | f483d3ae-b515-4466-8300-230d93a236cc ==============================
+[0m22:11:17.027459 [info ] [MainThread]: Running with dbt=1.11.7
+[0m22:11:17.031988 [debug] [MainThread]: running dbt with arguments {'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'log_cache_events': 'False', 'use_experimental_parser': 'False', 'write_json': 'True', 'log_format': 'default', 'cache_selected_only': 'False', 'log_path': 'logs', 'static_parser': 'True', 'version_check': 'True', 'introspect': 'True', 'empty': 'None', 'printer_width': '80', 'use_colors': 'True', 'fail_fast': 'False', 'debug': 'False', 'indirect_selection': 'eager', 'send_anonymous_usage_stats': 'True', 'invocation_command': 'dbt init', 'warn_error': 'None', 'quiet': 'False', 'partial_parse': 'True', 'target_path': 'None', 'profiles_dir': '/home/ntk04/.dbt', 'no_print': 'None'}
+[0m22:13:08.851676 [debug] [MainThread]: Starter project path: /mnt/k/job_ete/.venv/lib/python3.10/site-packages/dbt/include/starter_project
+[0m22:13:09.383417 [info ] [MainThread]: 
+Your new dbt project "dbt_job_analytíc" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m22:13:09.385291 [info ] [MainThread]: Setting up your profile.
+[0m22:13:31.818974 [error] [MainThread]: Encountered an error:
+
+[0m22:13:31.968346 [error] [MainThread]: Traceback (most recent call last):
+  File "/mnt/k/job_ete/.venv/lib/python3.10/site-packages/dbt/cli/requires.py", line 182, in wrapper
+    result, success = func(*args, **kwargs)
+  File "/mnt/k/job_ete/.venv/lib/python3.10/site-packages/dbt/cli/requires.py", line 128, in wrapper
+    return func(*args, **kwargs)
+  File "/mnt/k/job_ete/.venv/lib/python3.10/site-packages/dbt/cli/main.py", line 483, in init
+    results = task.run()
+  File "/mnt/k/job_ete/.venv/lib/python3.10/site-packages/dbt/task/init.py", line 346, in run
+    self.setup_profile(profile_name)
+  File "/mnt/k/job_ete/.venv/lib/python3.10/site-packages/dbt/task/init.py", line 261, in setup_profile
+    adapter = self.ask_for_adapter_choice()
+  File "/mnt/k/job_ete/.venv/lib/python3.10/site-packages/dbt/task/init.py", line 242, in ask_for_adapter_choice
+    numeric_choice = click.prompt(prompt_msg, type=click.INT)
+  File "/mnt/k/job_ete/.venv/lib/python3.10/site-packages/click/termui.py", line 171, in prompt
+    value = prompt_func(prompt)
+  File "/mnt/k/job_ete/.venv/lib/python3.10/site-packages/click/termui.py", line 154, in prompt_func
+    raise Abort() from None
+click.exceptions.Abort
+
+[0m22:13:31.981794 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": false, "command_wall_clock_time": 148.73793, "process_in_blocks": "9584", "process_kernel_time": 2.064151, "process_mem_max_rss": "111420", "process_out_blocks": "0", "process_user_time": 4.577031}
+[0m22:13:31.987587 [debug] [MainThread]: Command `dbt init` failed at 22:13:31.987206 after 148.74 seconds
+[0m22:13:31.993757 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b1d28660b50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b1d277d1840>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b1d277d16f0>]}
+[0m22:13:31.998230 [debug] [MainThread]: Flushing usage events
+[0m22:13:33.465673 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m22:13:50.945090 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78c39b280a00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78c39a2141f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78c39a214190>]}
+
+
+============================== 22:13:50.957498 | 32681523-c1ab-408d-800f-2c5f3c426575 ==============================
+[0m22:13:50.957498 [info ] [MainThread]: Running with dbt=1.11.7
+[0m22:13:50.959490 [debug] [MainThread]: running dbt with arguments {'fail_fast': 'False', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'cache_selected_only': 'False', 'target_path': 'None', 'quiet': 'False', 'log_format': 'default', 'log_path': 'logs', 'partial_parse': 'True', 'use_colors': 'True', 'introspect': 'True', 'send_anonymous_usage_stats': 'True', 'write_json': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'printer_width': '80', 'no_print': 'None', 'warn_error': 'None', 'version_check': 'True', 'debug': 'False', 'invocation_command': 'dbt init', 'static_parser': 'True', 'profiles_dir': '/home/ntk04/.dbt', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])'}
+[0m22:13:53.172354 [debug] [MainThread]: Starter project path: /mnt/k/job_ete/.venv/lib/python3.10/site-packages/dbt/include/starter_project
+[0m22:13:53.529278 [info ] [MainThread]: 
+Your new dbt project "dbt_job_analytics" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m22:13:53.530746 [info ] [MainThread]: Setting up your profile.
+[0m22:14:10.435256 [debug] [MainThread]: Spark adapter: Setting pyhive.hive logging to ERROR
+[0m22:14:10.437544 [debug] [MainThread]: Spark adapter: Setting thrift.transport logging to ERROR
+[0m22:14:10.439604 [debug] [MainThread]: Spark adapter: Setting thrift.protocol logging to ERROR
+[0m22:18:59.380828 [info ] [MainThread]: Profile dbt_job_analytics written to /home/ntk04/.dbt/profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m22:18:59.387770 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 338.49792, "process_in_blocks": "114144", "process_kernel_time": 2.285543, "process_mem_max_rss": "313740", "process_out_blocks": "8", "process_user_time": 5.492923}
+[0m22:18:59.392011 [debug] [MainThread]: Command `dbt init` succeeded at 22:18:59.391519 after 338.50 seconds
+[0m22:18:59.394526 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78c39b280a00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78c39a216140>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78c39a2141f0>]}
+[0m22:18:59.396467 [debug] [MainThread]: Flushing usage events
+[0m22:19:01.078214 [debug] [MainThread]: An error was encountered while trying to flush usage events
