@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: topcv_silver
+    database: awsdatacatalog
+    schema: silver
+    tables:
+      - name: jobs_postings
+        description: "Silver job postings table created by PySpark from Bronze Iceberg jobs."
+      - name: jobs_locations
+        description: "Silver normalized job locations table, one row per job-location."

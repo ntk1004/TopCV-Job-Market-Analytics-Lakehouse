@@ -1,0 +1,16 @@
+name: 'topcv_dbt'
+version: '1.0.0'
+config-version: 2
+
+profile: 'topcv_dbt'
+
+model-paths: ["models"]
+macro-paths: ["macros"]
+test-paths: ["tests"]
+
+models:
+  topcv_dbt:
+    staging:
+      +materialized: view
+    marts:
+      +materialized: table
