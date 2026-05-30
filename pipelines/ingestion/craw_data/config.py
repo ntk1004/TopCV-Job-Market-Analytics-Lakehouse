@@ -1,12 +1,32 @@
+import os
 from dataclasses import dataclass, field
 from pathlib import Path
 
 
+def _env_bool(name: str, default: bool) -> bool:
+    value = os.getenv(name)
+    if value is None:
+        return default
+    return value.strip().lower() in {"1", "true", "yes", "y", "on"}
+
+
+def _env_int(name: str, default: int) -> int:
+    value = os.getenv(name)
+    if value is None:
+        return default
+    try:
+        return int(value)
+    except ValueError:
+        return default
+
+
 @dataclass(slots=True)
 class CrawlerConfig:
-    base_url: str = "https://www.topcv.vn/viec-lam-it"
-    max_pages: int = 3
-    headless: bool = False  # Disable headless for more realistic browser behavior
+    base_url: str = field(
+        default_factory=lambda: os.getenv("TOPCV_BASE_URL", "https://www.topcv.vn/viec-lam-it")
+    )
+    max_pages: int = field(default_factory=lambda: _env_int("TOPCV_MAX_PAGES", 3))
+    headless: bool = field(default_factory=lambda: _env_bool("TOPCV_HEADLESS", True))
     page_load_timeout: int = 60  # Timeout for page load operations
     wait_timeout: int = 45  # Timeout for element wait operations
     user_agent: str = (
@@ -43,4 +63,3 @@ class CrawlerConfig:
     cloudflare_poll_interval: float = 0.5  # Check more frequently
     after_navigation_sleep: float = 2.5  # Increased delays to be more human-like
     
-

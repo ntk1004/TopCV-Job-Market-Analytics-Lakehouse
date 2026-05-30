@@ -1,0 +1,17 @@
+boto3>=1.42.97
+dbt-athena-community>=1.10.1
+dbt-core==1.9.7
+dbt-databricks==1.9.7
+delta-spark==3.1.0
+ipykernel>=6.29.0
+load-dotenv>=0.1.0
+numpy==1.26.4
+pandas==2.1.4
+papermill>=2.6.0
+py4j==0.10.9.7
+pymongo==3.13.0
+pyspark==3.5.0
+python-dotenv>=1.0.0
+selenium>=4.22,<5
+undetected-chromedriver>=3.4.7
+webdriver-manager==3.8.5

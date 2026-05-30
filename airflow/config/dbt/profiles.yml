@@ -1,0 +1,13 @@
+topcv_dbt:
+  target: "{{ env_var('DBT_TARGET', 'dev') }}"
+  outputs:
+    dev:
+      type: athena
+      database: "{{ env_var('DBT_ATHENA_DATABASE', 'awsdatacatalog') }}"
+      schema: "{{ env_var('DBT_ATHENA_SCHEMA', 'analytics') }}"
+      region_name: "{{ env_var('AWS_DEFAULT_REGION', 'us-east-1') }}"
+      s3_staging_dir: "{{ env_var('DBT_ATHENA_S3_STAGING_DIR') }}"
+      s3_data_dir: "{{ env_var('DBT_ATHENA_S3_DATA_DIR') }}"
+      s3_data_naming: "{{ env_var('DBT_ATHENA_S3_DATA_NAMING', 'schema_table_unique') }}"
+      work_group: "{{ env_var('DBT_ATHENA_WORK_GROUP', 'primary') }}"
+      threads: "{{ env_var('DBT_THREADS', 4) | as_number }}"

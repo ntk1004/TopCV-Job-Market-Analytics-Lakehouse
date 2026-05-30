@@ -23,8 +23,20 @@ from pyspark.sql import SparkSession
 from utils.glue_catalog import GlueCatalogManager
 
 
+def get_env(*names: str, default: str = '') -> str:
+    for name in names:
+        value = os.environ.get(name)
+        if value:
+            return value
+    return default
+
+
 def create_spark_session():
     """Create Spark session with Delta and Glue support"""
+    aws_region = get_env('AWS_REGION', 'AWS_DEFAULT_REGION', default='us-east-1')
+    aws_access_key_id = get_env('AWS_ACCESS_KEY_ID', 'aws_access_key_id')
+    aws_secret_access_key = get_env('AWS_SECRET_ACCESS_KEY', 'aws_secret_access_key')
+
     return SparkSession.builder \
         .appName("delta-schema-sync") \
         .master("local[*]") \
@@ -35,9 +47,9 @@ def create_spark_session():
         ) \
         .config("spark.sql.extensions", "io.delta.sql.DeltaSparkSessionExtension") \
         .config("spark.sql.catalog.spark_catalog", "org.apache.spark.sql.delta.catalog.DeltaCatalog") \
-        .config("spark.hadoop.fs.s3a.endpoint", "s3.us-east-1.amazonaws.com") \
-        .config("spark.hadoop.fs.s3a.access.key", os.environ.get('aws_access_key_id', '')) \
-        .config("spark.hadoop.fs.s3a.secret.key", os.environ.get('aws_secret_access_key', '')) \
+        .config("spark.hadoop.fs.s3a.endpoint", f"s3.{aws_region}.amazonaws.com") \
+        .config("spark.hadoop.fs.s3a.access.key", aws_access_key_id) \
+        .config("spark.hadoop.fs.s3a.secret.key", aws_secret_access_key) \
         .config("spark.hadoop.fs.s3a.path.style.access", "false") \
         .config("spark.hadoop.hive.metastore.client.factory.class",
                 "com.amazonaws.glue.catalog.metastore.AWSGlueDataCatalogHiveClientFactory") \
@@ -54,9 +66,9 @@ def main():
     spark = create_spark_session()
     glue_mgr = GlueCatalogManager(
         spark=spark,
-        region='us-east-1',
-        aws_access_key_id=os.environ.get('aws_access_key_id'),
-        aws_secret_access_key=os.environ.get('aws_secret_access_key')
+        region=get_env('AWS_REGION', 'AWS_DEFAULT_REGION', default='us-east-1'),
+        aws_access_key_id=get_env('AWS_ACCESS_KEY_ID', 'aws_access_key_id'),
+        aws_secret_access_key=get_env('AWS_SECRET_ACCESS_KEY', 'aws_secret_access_key')
     )
 
     # Configuration
@@ -70,15 +82,15 @@ def main():
     # Sync all tables
     success_count = 0
     for table_name, s3_location in tables_to_sync:
-        print(f"\n📊 Syncing {table_name}...")
+        print(f"\n Syncing {table_name}...")
         if glue_mgr.sync_delta_schema_to_glue(database_name, table_name, s3_location):
             success_count += 1
         else:
-            print(f"❌ Failed to sync {table_name}")
+            print(f" Failed to sync {table_name}")
 
     # Summary
-    print(f"\n✅ Sync completed: {success_count}/{len(tables_to_sync)} tables updated")
-    print(f"🏁 Finished at {datetime.now()}")
+    print(f"\n Sync completed: {success_count}/{len(tables_to_sync)} tables updated")
+    print(f" Finished at {datetime.now()}")
 
     # Stop Spark
     spark.stop()

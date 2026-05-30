@@ -486,3 +486,323 @@ Happy modeling!
 [0m22:18:59.394526 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78c39b280a00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78c39a216140>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78c39a2141f0>]}
 [0m22:18:59.396467 [debug] [MainThread]: Flushing usage events
 [0m22:19:01.078214 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m15:47:48.849144 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76ccce9cdea0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76cccd91e1a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76cccd91e140>]}
+
+
+============================== 15:47:48.891907 | a74a6597-5691-4d8f-8e2e-ad6385903a2c ==============================
+[0m15:47:48.891907 [info ] [MainThread]: Running with dbt=1.9.7
+[0m15:47:48.893548 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'debug': 'False', 'log_path': 'logs', 'version_check': 'True', 'profiles_dir': '/home/ntk04/.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'introspect': 'True', 'static_parser': 'True', 'invocation_command': 'dbt init topcv_dbt', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m15:47:50.870448 [debug] [MainThread]: Starter project path: /mnt/k/job_ete/.venv/lib/python3.10/site-packages/dbt/include/starter_project
+[0m15:47:51.690144 [info ] [MainThread]: 
+Your new dbt project "topcv_dbt" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m15:47:51.691720 [info ] [MainThread]: Setting up your profile.
+[0m15:51:59.537968 [info ] [MainThread]: Profile topcv_dbt written to /home/ntk04/.dbt/profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m15:51:59.549491 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 272.1526, "process_in_blocks": "14104", "process_kernel_time": 1.753317, "process_mem_max_rss": "117948", "process_out_blocks": "8", "process_user_time": 3.048033}
+[0m15:51:59.552683 [debug] [MainThread]: Command `dbt init` succeeded at 15:51:59.552369 after 272.16 seconds
+[0m15:51:59.555635 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76ccce9cdea0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76cccd9aece0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76cccd9ade70>]}
+[0m15:51:59.558067 [debug] [MainThread]: Flushing usage events
+[0m15:52:01.162799 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m15:52:52.007388 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f5cf5f89ea0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f5cf4ee21a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f5cf4ee2140>]}
+
+
+============================== 15:52:52.043987 | 3b6ce4d0-e88d-42d5-b79a-0f9459dacd9f ==============================
+[0m15:52:52.043987 [info ] [MainThread]: Running with dbt=1.9.7
+[0m15:52:52.046848 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'profiles_dir': '/home/ntk04/.dbt', 'log_path': 'logs', 'fail_fast': 'False', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt debug', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m15:52:52.608074 [info ] [MainThread]: dbt version: 1.9.7
+[0m15:52:52.610233 [info ] [MainThread]: python version: 3.10.12
+[0m15:52:52.612002 [info ] [MainThread]: python path: /mnt/k/job_ete/.venv/bin/python
+[0m15:52:52.614727 [info ] [MainThread]: os info: Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.35
+[0m15:53:07.157181 [debug] [MainThread]: Spark adapter: Setting pyhive.hive logging to ERROR
+[0m15:53:07.160896 [debug] [MainThread]: Spark adapter: Setting thrift.transport logging to ERROR
+[0m15:53:07.162486 [debug] [MainThread]: Spark adapter: Setting thrift.protocol logging to ERROR
+[0m15:53:34.551867 [info ] [MainThread]: Using profiles dir at /home/ntk04/.dbt
+[0m15:53:34.554454 [info ] [MainThread]: Using profiles.yml file at /home/ntk04/.dbt/profiles.yml
+[0m15:53:34.556156 [info ] [MainThread]: Using dbt_project.yml file at /mnt/k/job_ete/dbt_project.yml
+[0m15:53:34.558140 [error] [MainThread]: Encountered an error:
+Internal Error
+  Profile should not be None if loading profile completed
+[0m15:53:34.563134 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 45.310375, "process_in_blocks": "104608", "process_kernel_time": 2.395728, "process_mem_max_rss": "211872", "process_out_blocks": "0", "process_user_time": 4.215269}
+[0m15:53:34.565368 [debug] [MainThread]: Command `dbt debug` failed at 15:53:34.565211 after 45.31 seconds
+[0m15:53:34.568135 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f5cf5f89ea0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f5ce1706d40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f5cf4f2fee0>]}
+[0m15:53:34.577289 [debug] [MainThread]: Flushing usage events
+[0m15:53:36.211321 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m15:54:48.496356 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x713f9f529ea0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x713f9e45a1a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x713f9e45a140>]}
+
+
+============================== 15:54:48.508224 | 53f0028b-f5fb-4300-929c-1d1eb70145bf ==============================
+[0m15:54:48.508224 [info ] [MainThread]: Running with dbt=1.9.7
+[0m15:54:48.510062 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'version_check': 'True', 'log_path': 'logs', 'debug': 'False', 'profiles_dir': '/home/ntk04/.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'static_parser': 'True', 'invocation_command': 'dbt debug', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m15:54:49.073134 [info ] [MainThread]: dbt version: 1.9.7
+[0m15:54:49.084522 [info ] [MainThread]: python version: 3.10.12
+[0m15:54:49.087419 [info ] [MainThread]: python path: /mnt/k/job_ete/.venv/bin/python
+[0m15:54:49.090453 [info ] [MainThread]: os info: Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.35
+[0m15:54:57.266689 [info ] [MainThread]: Using profiles dir at /home/ntk04/.dbt
+[0m15:54:57.269527 [info ] [MainThread]: Using profiles.yml file at /home/ntk04/.dbt/profiles.yml
+[0m15:54:57.271314 [info ] [MainThread]: Using dbt_project.yml file at /mnt/k/job_ete/dbt_project.yml
+[0m15:54:57.310725 [info ] [MainThread]: adapter type: athena
+[0m15:54:57.312655 [info ] [MainThread]: adapter version: 1.10.1
+[0m15:54:57.318636 [info ] [MainThread]: Configuration:
+[0m15:54:57.320777 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m15:54:57.322436 [info ] [MainThread]:   dbt_project.yml file [[31mERROR not found[0m]
+[0m15:54:57.323716 [info ] [MainThread]: Required dependencies:
+[0m15:54:57.325093 [debug] [MainThread]: Executing "git --help"
+[0m15:54:57.331063 [debug] [MainThread]: STDOUT: "b"usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--super-prefix=<path>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m15:54:57.333265 [debug] [MainThread]: STDERR: "b''"
+[0m15:54:57.335231 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m15:54:57.336698 [info ] [MainThread]: Connection:
+[0m15:54:57.338373 [info ] [MainThread]:   s3_staging_dir: s3://amzn-s3-job-prj/athena-results/
+[0m15:54:57.340183 [info ] [MainThread]:   work_group: primary
+[0m15:54:57.342651 [info ] [MainThread]:   skip_workgroup_check: False
+[0m15:54:57.345426 [info ] [MainThread]:   region_name: ap-southeast-1
+[0m15:54:57.352658 [info ] [MainThread]:   database: gold
+[0m15:54:57.354389 [info ] [MainThread]:   schema: gold
+[0m15:54:57.356564 [info ] [MainThread]:   poll_interval: 1.0
+[0m15:54:57.358697 [info ] [MainThread]:   aws_profile_name: None
+[0m15:54:57.360354 [info ] [MainThread]:   aws_access_key_id: None
+[0m15:54:57.361615 [info ] [MainThread]:   endpoint_url: None
+[0m15:54:57.363140 [info ] [MainThread]:   s3_data_dir: s3://amzn-s3-job-prj/gold/
+[0m15:54:57.364410 [info ] [MainThread]:   s3_data_naming: schema_table
+[0m15:54:57.366115 [info ] [MainThread]:   s3_tmp_table_dir: None
+[0m15:54:57.367527 [info ] [MainThread]:   debug_query_state: False
+[0m15:54:57.368700 [info ] [MainThread]:   seed_s3_upload_args: None
+[0m15:54:57.369912 [info ] [MainThread]:   lf_tags_database: None
+[0m15:54:57.371303 [info ] [MainThread]:   spark_work_group: None
+[0m15:54:57.375412 [info ] [MainThread]: Registered adapter: athena=1.10.1
+[0m15:55:13.154760 [debug] [MainThread]: Acquiring new athena connection 'debug'
+[0m15:55:13.157922 [debug] [MainThread]: Using athena connection "debug"
+[0m15:55:13.161041 [debug] [MainThread]: On debug: select 1 as id
+[0m15:55:13.164158 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m15:57:19.122892 [debug] [MainThread]: dbt.adapters.athena.constants adapter: Error running SQL: select 1 as id
+[0m15:57:19.125149 [debug] [MainThread]: On debug: Close
+[0m15:57:19.126912 [info ] [MainThread]:   Connection test: [[31mERROR[0m]
+
+[0m15:57:19.128669 [info ] [MainThread]: [31m2 checks failed:[0m
+[0m15:57:19.130268 [info ] [MainThread]: Project loading failed for the following reason:
+ project path </mnt/k/job_ete/dbt_project.yml> not found
+
+[0m15:57:19.133006 [info ] [MainThread]: dbt was unable to connect to the specified database.
+The database returned the following error:
+
+  >Runtime Error
+  Unable to locate credentials
+
+Check your database credentials and try again. For more information, visit:
+https://docs.getdbt.com/docs/configure-your-profile
+
+
+[0m15:57:19.140210 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 164.24219, "process_in_blocks": "9736", "process_kernel_time": 2.423826, "process_mem_max_rss": "133228", "process_out_blocks": "0", "process_user_time": 3.105033}
+[0m15:57:19.142078 [debug] [MainThread]: Command `dbt debug` failed at 15:57:19.141865 after 164.24 seconds
+[0m15:57:19.145284 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m15:57:19.147685 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x713f9f529ea0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x713f9c76b0d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x713f9c76ab30>]}
+[0m15:57:19.149886 [debug] [MainThread]: Flushing usage events
+[0m15:57:20.755343 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m16:02:19.466960 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x771c215bdea0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x771c204fe170>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x771c204fe110>]}
+
+
+============================== 16:02:19.487383 | 54d06bd4-2a87-4dea-8bbe-46720f9e9162 ==============================
+[0m16:02:19.487383 [info ] [MainThread]: Running with dbt=1.9.7
+[0m16:02:19.489625 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/ntk04/.dbt', 'version_check': 'True', 'fail_fast': 'False', 'log_path': 'logs', 'debug': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'log_format': 'default', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'target_path': 'None', 'invocation_command': 'dbt debug', 'send_anonymous_usage_stats': 'True'}
+[0m16:02:19.995415 [info ] [MainThread]: dbt version: 1.9.7
+[0m16:02:19.997911 [info ] [MainThread]: python version: 3.10.12
+[0m16:02:20.000343 [info ] [MainThread]: python path: /mnt/k/job_ete/.venv/bin/python
+[0m16:02:20.003473 [info ] [MainThread]: os info: Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.35
+[0m16:02:29.443984 [info ] [MainThread]: Using profiles dir at /home/ntk04/.dbt
+[0m16:02:29.446339 [info ] [MainThread]: Using profiles.yml file at /home/ntk04/.dbt/profiles.yml
+[0m16:02:29.448274 [info ] [MainThread]: Using dbt_project.yml file at /mnt/k/job_ete/dbt_project.yml
+[0m16:02:29.461989 [info ] [MainThread]: adapter type: athena
+[0m16:02:29.464119 [info ] [MainThread]: adapter version: 1.10.1
+[0m16:02:29.466085 [info ] [MainThread]: Configuration:
+[0m16:02:29.468260 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m16:02:29.471664 [info ] [MainThread]:   dbt_project.yml file [[31mERROR not found[0m]
+[0m16:02:29.473139 [info ] [MainThread]: Required dependencies:
+[0m16:02:29.474974 [debug] [MainThread]: Executing "git --help"
+[0m16:02:29.478900 [debug] [MainThread]: STDOUT: "b"usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--super-prefix=<path>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m16:02:29.480769 [debug] [MainThread]: STDERR: "b''"
+[0m16:02:29.482236 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m16:02:29.483922 [info ] [MainThread]: Connection:
+[0m16:02:29.485636 [info ] [MainThread]:   s3_staging_dir: s3://amzn-s3-job-prj/athena-results/
+[0m16:02:29.486974 [info ] [MainThread]:   work_group: primary
+[0m16:02:29.488453 [info ] [MainThread]:   skip_workgroup_check: False
+[0m16:02:29.489900 [info ] [MainThread]:   region_name: us-east-1
+[0m16:02:29.491300 [info ] [MainThread]:   database: gold
+[0m16:02:29.493016 [info ] [MainThread]:   schema: gold
+[0m16:02:29.494621 [info ] [MainThread]:   poll_interval: 1.0
+[0m16:02:29.495952 [info ] [MainThread]:   aws_profile_name: None
+[0m16:02:29.497224 [info ] [MainThread]:   aws_access_key_id: None
+[0m16:02:29.498785 [info ] [MainThread]:   endpoint_url: None
+[0m16:02:29.500661 [info ] [MainThread]:   s3_data_dir: s3://amzn-s3-job-prj/gold/
+[0m16:02:29.502044 [info ] [MainThread]:   s3_data_naming: schema_table
+[0m16:02:29.503829 [info ] [MainThread]:   s3_tmp_table_dir: None
+[0m16:02:29.505421 [info ] [MainThread]:   debug_query_state: False
+[0m16:02:29.507088 [info ] [MainThread]:   seed_s3_upload_args: None
+[0m16:02:29.508252 [info ] [MainThread]:   lf_tags_database: None
+[0m16:02:29.509785 [info ] [MainThread]:   spark_work_group: None
+[0m16:02:29.515080 [info ] [MainThread]: Registered adapter: athena=1.10.1
+[0m16:02:41.562364 [debug] [MainThread]: Acquiring new athena connection 'debug'
+[0m16:02:41.564699 [debug] [MainThread]: Using athena connection "debug"
+[0m16:02:41.566574 [debug] [MainThread]: On debug: select 1 as id
+[0m16:02:41.568143 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m16:03:22.863247 [debug] [MainThread]: dbt.adapters.athena.constants adapter: Error running SQL: select 1 as id
+[0m16:03:22.864882 [debug] [MainThread]: On debug: Close
+[0m16:03:22.867495 [info ] [MainThread]:   Connection test: [[31mERROR[0m]
+
+[0m16:03:22.875891 [info ] [MainThread]: [31m2 checks failed:[0m
+[0m16:03:22.879197 [info ] [MainThread]: Project loading failed for the following reason:
+ project path </mnt/k/job_ete/dbt_project.yml> not found
+
+[0m16:03:22.884850 [info ] [MainThread]: dbt was unable to connect to the specified database.
+The database returned the following error:
+
+  >Runtime Error
+  Unable to locate credentials
+
+Check your database credentials and try again. For more information, visit:
+https://docs.getdbt.com/docs/configure-your-profile
+
+
+[0m16:03:22.897428 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 68.86309, "process_in_blocks": "9688", "process_kernel_time": 2.415223, "process_mem_max_rss": "133096", "process_out_blocks": "0", "process_user_time": 3.372573}
+[0m16:03:22.899547 [debug] [MainThread]: Command `dbt debug` failed at 16:03:22.899201 after 68.87 seconds
+[0m16:03:22.901314 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m16:03:22.903149 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x771c215bdea0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x771c1e7f70a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x771c1e7f6b00>]}
+[0m16:03:22.904888 [debug] [MainThread]: Flushing usage events
+[0m16:03:24.486826 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m16:09:21.159182 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b446909df90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b4468096320>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b44680962c0>]}
+
+
+============================== 16:09:21.175271 | 3ca96723-1cd1-4670-a8bb-f62413a0751b ==============================
+[0m16:09:21.175271 [info ] [MainThread]: Running with dbt=1.9.7
+[0m16:09:21.177418 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'profiles_dir': '/home/ntk04/.dbt', 'log_path': 'logs', 'version_check': 'True', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt debug', 'static_parser': 'True', 'introspect': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m16:09:21.565486 [info ] [MainThread]: dbt version: 1.9.7
+[0m16:09:21.567709 [info ] [MainThread]: python version: 3.10.12
+[0m16:09:21.569662 [info ] [MainThread]: python path: /mnt/k/job_ete/.venv/bin/python
+[0m16:09:21.571638 [info ] [MainThread]: os info: Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.35
+[0m16:09:28.553600 [info ] [MainThread]: Using profiles dir at /home/ntk04/.dbt
+[0m16:09:28.555504 [info ] [MainThread]: Using profiles.yml file at /home/ntk04/.dbt/profiles.yml
+[0m16:09:28.557162 [info ] [MainThread]: Using dbt_project.yml file at /mnt/k/job_ete/dbt_project.yml
+[0m16:09:28.569382 [info ] [MainThread]: adapter type: athena
+[0m16:09:28.572775 [info ] [MainThread]: adapter version: 1.10.1
+[0m16:09:28.577349 [info ] [MainThread]: Configuration:
+[0m16:09:28.580274 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m16:09:28.581864 [info ] [MainThread]:   dbt_project.yml file [[31mERROR not found[0m]
+[0m16:09:28.583397 [info ] [MainThread]: Required dependencies:
+[0m16:09:28.586193 [debug] [MainThread]: Executing "git --help"
+[0m16:09:28.595999 [debug] [MainThread]: STDOUT: "b"usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--super-prefix=<path>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m16:09:28.598714 [debug] [MainThread]: STDERR: "b''"
+[0m16:09:28.600700 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m16:09:28.602815 [info ] [MainThread]: Connection:
+[0m16:09:28.604536 [info ] [MainThread]:   s3_staging_dir: s3://amzn-s3-job-prj/athena-results/
+[0m16:09:28.605538 [info ] [MainThread]:   work_group: primary
+[0m16:09:28.607199 [info ] [MainThread]:   skip_workgroup_check: False
+[0m16:09:28.608792 [info ] [MainThread]:   region_name: us-east-1
+[0m16:09:28.610114 [info ] [MainThread]:   database: awsdatacatalog
+[0m16:09:28.611198 [info ] [MainThread]:   schema: gold
+[0m16:09:28.614232 [info ] [MainThread]:   poll_interval: 1.0
+[0m16:09:28.615980 [info ] [MainThread]:   aws_profile_name: None
+[0m16:09:28.617904 [info ] [MainThread]:   aws_access_key_id: None
+[0m16:09:28.620086 [info ] [MainThread]:   endpoint_url: None
+[0m16:09:28.621820 [info ] [MainThread]:   s3_data_dir: s3://amzn-s3-job-prj/gold/
+[0m16:09:28.623603 [info ] [MainThread]:   s3_data_naming: schema_table
+[0m16:09:28.624905 [info ] [MainThread]:   s3_tmp_table_dir: None
+[0m16:09:28.626086 [info ] [MainThread]:   debug_query_state: False
+[0m16:09:28.627747 [info ] [MainThread]:   seed_s3_upload_args: None
+[0m16:09:28.629598 [info ] [MainThread]:   lf_tags_database: None
+[0m16:09:28.634498 [info ] [MainThread]:   spark_work_group: None
+[0m16:09:28.639367 [info ] [MainThread]: Registered adapter: athena=1.10.1
+[0m16:09:37.570146 [debug] [MainThread]: Acquiring new athena connection 'debug'
+[0m16:09:37.571466 [debug] [MainThread]: Using athena connection "debug"
+[0m16:09:37.572459 [debug] [MainThread]: On debug: select 1 as id
+[0m16:09:37.573321 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m16:09:47.298093 [debug] [MainThread]: dbt.adapters.athena.constants adapter: Athena query ID 8d4298e0-949c-42bd-ada8-6ce93917cf12
+[0m16:09:50.107809 [debug] [MainThread]: SQL status: OK -1 in 15.279 seconds
+[0m16:09:50.110832 [debug] [MainThread]: On debug: Close
+[0m16:09:50.112639 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m16:09:50.114730 [info ] [MainThread]: [31m1 check failed:[0m
+[0m16:09:50.116190 [info ] [MainThread]: Project loading failed for the following reason:
+ project path </mnt/k/job_ete/dbt_project.yml> not found
+
+[0m16:09:50.121107 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 31.794182, "process_in_blocks": "9688", "process_kernel_time": 2.099445, "process_mem_max_rss": "141508", "process_out_blocks": "0", "process_user_time": 3.141186}
+[0m16:09:50.122449 [debug] [MainThread]: Command `dbt debug` failed at 16:09:50.122289 after 31.80 seconds
+[0m16:09:50.123537 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m16:09:50.125145 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b446909df90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b4466ebda80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b4466378f10>]}
+[0m16:09:50.126437 [debug] [MainThread]: Flushing usage events
+[0m16:09:51.754056 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m16:12:14.096645 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77173a661f60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7717395b2260>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7717395b2200>]}
+
+
+============================== 16:12:14.106740 | 23f4952c-84b4-4220-bb28-9686ca1df930 ==============================
+[0m16:12:14.106740 [info ] [MainThread]: Running with dbt=1.9.7
+[0m16:12:14.108065 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/ntk04/.dbt', 'version_check': 'True', 'fail_fast': 'False', 'log_path': 'logs', 'warn_error': 'None', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'invocation_command': 'dbt debug', 'introspect': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m16:12:14.396021 [info ] [MainThread]: dbt version: 1.9.7
+[0m16:12:14.397246 [info ] [MainThread]: python version: 3.10.12
+[0m16:12:14.398203 [info ] [MainThread]: python path: /mnt/k/job_ete/.venv/bin/python
+[0m16:12:14.399037 [info ] [MainThread]: os info: Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.35
+[0m16:12:20.892071 [info ] [MainThread]: Using profiles dir at /home/ntk04/.dbt
+[0m16:12:20.893959 [info ] [MainThread]: Using profiles.yml file at /home/ntk04/.dbt/profiles.yml
+[0m16:12:20.895558 [info ] [MainThread]: Using dbt_project.yml file at /mnt/k/job_ete/dbt_project.yml
+[0m16:12:20.909453 [info ] [MainThread]: adapter type: athena
+[0m16:12:20.912217 [info ] [MainThread]: adapter version: 1.10.1
+[0m16:12:20.915575 [info ] [MainThread]: Configuration:
+[0m16:12:20.920858 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m16:12:20.923031 [info ] [MainThread]:   dbt_project.yml file [[31mERROR not found[0m]
+[0m16:12:20.924805 [info ] [MainThread]: Required dependencies:
+[0m16:12:20.926060 [debug] [MainThread]: Executing "git --help"
+[0m16:12:20.932373 [debug] [MainThread]: STDOUT: "b"usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--super-prefix=<path>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m16:12:20.933973 [debug] [MainThread]: STDERR: "b''"
+[0m16:12:20.936364 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m16:12:20.938308 [info ] [MainThread]: Connection:
+[0m16:12:20.940890 [info ] [MainThread]:   s3_staging_dir: s3://amzn-s3-job-prj/athena-results/
+[0m16:12:20.942340 [info ] [MainThread]:   work_group: primary
+[0m16:12:20.944345 [info ] [MainThread]:   skip_workgroup_check: False
+[0m16:12:20.946425 [info ] [MainThread]:   region_name: us-east-1
+[0m16:12:20.948288 [info ] [MainThread]:   database: awsdatacatalog
+[0m16:12:20.950030 [info ] [MainThread]:   schema: gold
+[0m16:12:20.951752 [info ] [MainThread]:   poll_interval: 1.0
+[0m16:12:20.953019 [info ] [MainThread]:   aws_profile_name: None
+[0m16:12:20.954767 [info ] [MainThread]:   aws_access_key_id: AKIAQ3I754T5ACFZNPOW
+[0m16:12:20.956343 [info ] [MainThread]:   endpoint_url: None
+[0m16:12:20.958246 [info ] [MainThread]:   s3_data_dir: s3://amzn-s3-job-prj/gold/
+[0m16:12:20.959466 [info ] [MainThread]:   s3_data_naming: schema_table
+[0m16:12:20.960493 [info ] [MainThread]:   s3_tmp_table_dir: None
+[0m16:12:20.961624 [info ] [MainThread]:   debug_query_state: False
+[0m16:12:20.962679 [info ] [MainThread]:   seed_s3_upload_args: None
+[0m16:12:20.963860 [info ] [MainThread]:   lf_tags_database: None
+[0m16:12:20.965243 [info ] [MainThread]:   spark_work_group: None
+[0m16:12:20.969240 [info ] [MainThread]: Registered adapter: athena=1.10.1
+[0m16:12:29.366090 [debug] [MainThread]: Acquiring new athena connection 'debug'
+[0m16:12:29.367323 [debug] [MainThread]: Using athena connection "debug"
+[0m16:12:29.368323 [debug] [MainThread]: On debug: select 1 as id
+[0m16:12:29.369471 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m16:12:40.344455 [debug] [MainThread]: dbt.adapters.athena.constants adapter: Athena query ID 921ed192-357c-46d8-b201-7c0faa5f0d71
+[0m16:12:42.941470 [debug] [MainThread]: SQL status: OK -1 in 16.300 seconds
+[0m16:12:42.945994 [debug] [MainThread]: On debug: Close
+[0m16:12:42.948736 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m16:12:42.951925 [info ] [MainThread]: [31m1 check failed:[0m
+[0m16:12:42.954338 [info ] [MainThread]: Project loading failed for the following reason:
+ project path </mnt/k/job_ete/dbt_project.yml> not found
+
+[0m16:12:42.962975 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 31.65789, "process_in_blocks": "9688", "process_kernel_time": 2.312026, "process_mem_max_rss": "141660", "process_out_blocks": "0", "process_user_time": 2.876781}
+[0m16:12:42.966292 [debug] [MainThread]: Command `dbt debug` failed at 16:12:42.965970 after 31.66 seconds
+[0m16:12:42.969413 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m16:12:42.979782 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77173a661f60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x771738225480>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7717382240d0>]}
+[0m16:12:42.986421 [debug] [MainThread]: Flushing usage events
+[0m16:12:44.615001 [debug] [MainThread]: An error was encountered while trying to flush usage events

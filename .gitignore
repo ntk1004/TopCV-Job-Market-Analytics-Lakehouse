@@ -7,3 +7,13 @@
 /infrastructure/jars
 /infrastructure/jars
 jars
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+/logs/
+/airflow/logs/*
+!/airflow/logs/.gitkeep
+/airflow/config/airflow.cfg
+/pipelines/ingestion/craw_data/output/
+/sync_log.txt

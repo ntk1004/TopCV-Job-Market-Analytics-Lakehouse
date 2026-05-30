@@ -1,73 +1,186 @@
 
+name: ${COMPOSE_PROJECT_NAME:-job_ete}
+
+x-airflow-common: &airflow-common
+  build:
+    context: ../..
+    dockerfile: infrastructure/docker/airflow.Dockerfile
+    args:
+      AIRFLOW_VERSION: ${AIRFLOW_VERSION:-3.2.2}
+      PYTHON_VERSION: ${PYTHON_VERSION:-3.10}
+  image: ${AIRFLOW_IMAGE_NAME:-job-ete-airflow:3.2.2-python3.10}
+  user: "${AIRFLOW_UID:-50000}:0"
+  environment: &airflow-common-env
+    AIRFLOW__CORE__EXECUTOR: CeleryExecutor
+    AIRFLOW__CORE__EXECUTION_API_SERVER_URL: http://airflow-api-server:8080/execution/
+    AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@airflow-postgres/airflow
+    AIRFLOW__CELERY__RESULT_BACKEND: db+postgresql://airflow:airflow@airflow-postgres/airflow
+    AIRFLOW__CELERY__BROKER_URL: redis://:@airflow-redis:6379/0
+    AIRFLOW__CORE__FERNET_KEY: ${AIRFLOW_FERNET_KEY:-}
+    AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: "true"
+    AIRFLOW__CORE__LOAD_EXAMPLES: "false"
+    AIRFLOW__CORE__SIMPLE_AUTH_MANAGER_PASSWORDS_FILE: /opt/airflow/config/simple_auth_manager_passwords.json
+    AIRFLOW__CORE__SIMPLE_AUTH_MANAGER_USERS: ${AIRFLOW_SIMPLE_AUTH_MANAGER_USERS:-airflow:admin}
+    AIRFLOW__API_AUTH__JWT_SECRET: ${AIRFLOW_JWT_SECRET:-dev-only-change-me}
+    AIRFLOW__SCHEDULER__ENABLE_HEALTH_CHECK: "true"
+    AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID:-}
+    AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY:-}
+    AWS_DEFAULT_REGION: ${AWS_DEFAULT_REGION:-us-east-1}
+    AWS_REGION: ${AWS_REGION:-us-east-1}
+    CHROME_BIN: ${CHROME_BIN:-/usr/bin/chromium}
+    CHROMEDRIVER_PATH: ${CHROMEDRIVER_PATH:-/usr/local/bin/chromedriver-undetected}
+    DBT_ATHENA_DATABASE: ${DBT_ATHENA_DATABASE:-awsdatacatalog}
+    DBT_ATHENA_S3_DATA_DIR: ${DBT_ATHENA_S3_DATA_DIR:-s3://amzn-s3-job-prj/dbt/}
+    DBT_ATHENA_S3_DATA_NAMING: ${DBT_ATHENA_S3_DATA_NAMING:-schema_table_unique}
+    DBT_ATHENA_S3_STAGING_DIR: ${DBT_ATHENA_S3_STAGING_DIR:-s3://amzn-s3-job-prj/athena/staging/}
+    DBT_ATHENA_SCHEMA: ${DBT_ATHENA_SCHEMA:-analytics}
+    DBT_ATHENA_WORK_GROUP: ${DBT_ATHENA_WORK_GROUP:-primary}
+    DBT_PROJECT_DIR: /opt/airflow/project/topcv_dbt
+    DBT_PROFILES_DIR: /opt/airflow/config/dbt
+    DBT_TARGET: ${DBT_TARGET:-dev}
+    DBT_THREADS: ${DBT_THREADS:-4}
+    PROJECT_DIR: /opt/airflow/project
+    PYTHONDONTWRITEBYTECODE: "1"
+    PYTHONPATH: /opt/airflow/project
+    TOPCV_HEADLESS: ${TOPCV_HEADLESS:-true}
+    TOPCV_MAX_PAGES: ${TOPCV_MAX_PAGES:-3}
+  volumes:
+    - ../../airflow/dags:/opt/airflow/dags
+    - ../../airflow/logs:/opt/airflow/logs
+    - ../../airflow/config:/opt/airflow/config
+    - ../../airflow/plugins:/opt/airflow/plugins
+    - ../..:/opt/airflow/project
+  depends_on: &airflow-common-depends-on
+    airflow-postgres:
+      condition: service_healthy
+    airflow-redis:
+      condition: service_healthy
+  networks:
+    - datalake-network
+
 services:
-  
-  minio:
-    image: minio/minio
-    container_name: datalake-minio
-    hostname: minio
-    ports:
-      - "9002:9000"
-      - "9003:9001"
-    volumes:
-      - minio_storage:/data
+
+
+  airflow-postgres:
+    image: postgres:16
+    container_name: datalake-airflow-postgres
+    hostname: airflow-postgres
     environment:
-      MINIO_ROOT_USER: minio_access_key
-      MINIO_ROOT_PASSWORD: minio_secret_key
-    command: server --console-address ":9001" /data
+      POSTGRES_USER: airflow
+      POSTGRES_PASSWORD: airflow
+      POSTGRES_DB: airflow
+    volumes:
+      - airflow_postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "airflow"]
+      interval: 10s
+      retries: 5
+      start_period: 5s
+    restart: unless-stopped
     networks:
       - datalake-network
 
-  metastore_db:
-    container_name: datalake-metastore-db
-    image: postgres:11
-    hostname: metastore_db
-    ports:
-      - '5433:5432'
-    environment:
-      POSTGRES_USER: hive
-      POSTGRES_PASSWORD: hive
-      POSTGRES_DB: metastore
+  airflow-redis:
+    image: redis:7.2-bookworm
+    container_name: datalake-airflow-redis
+    hostname: airflow-redis
+    expose:
+      - 6379
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 30s
+      retries: 50
+      start_period: 30s
+    restart: unless-stopped
     networks:
       - datalake-network
-    volumes:
-      - metastore_db_data:/var/lib/postgresql/data
 
-  hive-metastore:
-    container_name: datalake-hive-metastore
-    image: 'starburstdata/hive:3.1.2-e.18'
-    hostname: hive-metastore
-    ports:
-      - '9083:9083'
+  airflow-init:
+    <<: *airflow-common
+    container_name: datalake-airflow-init
+    command: version
     environment:
-      HIVE_METASTORE_DRIVER: org.postgresql.Driver
-      HIVE_METASTORE_JDBC_URL: jdbc:postgresql://metastore_db:5432/metastore
-      HIVE_METASTORE_USER: hive
-      HIVE_METASTORE_PASSWORD: hive
-      S3_ENDPOINT: http://minio:9000
-      S3_ACCESS_KEY: minio_access_key
-      S3_SECRET_KEY: minio_secret_key
-      S3_PATH_STYLE_ACCESS: "true"
-      REGION: ""
-      GOOGLE_CLOUD_KEY_FILE_PATH: ""
-      AZURE_ADL_CLIENT_ID: ""
-      AZURE_ADL_CREDENTIAL: ""
-      AZURE_ADL_REFRESH_URL: ""
-      AZURE_ABFS_STORAGE_ACCOUNT: ""
-      AZURE_ABFS_ACCESS_KEY: ""
-      AZURE_WASB_STORAGE_ACCOUNT: ""
-      AZURE_ABFS_OAUTH: ""
-      AZURE_ABFS_OAUTH_TOKEN_PROVIDER: ""
-      AZURE_ABFS_OAUTH_CLIENT_ID: ""
-      AZURE_ABFS_OAUTH_SECRET: ""
-      AZURE_ABFS_OAUTH_ENDPOINT: ""
-      AZURE_WASB_ACCESS_KEY: ""
+      <<: *airflow-common-env
+      _AIRFLOW_DB_MIGRATE: "true"
+
+  airflow-api-server:
+    <<: *airflow-common
+    container_name: datalake-airflow-api-server
+    command: api-server
+    ports:
+      - "8080:8080"
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "http://localhost:8080/api/v2/monitor/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
+    restart: unless-stopped
     depends_on:
-      - metastore_db
-    networks:
-      - datalake-network
+      <<: *airflow-common-depends-on
+      airflow-init:
+        condition: service_completed_successfully
+
+  airflow-scheduler:
+    <<: *airflow-common
+    container_name: datalake-airflow-scheduler
+    command: scheduler
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "http://localhost:8974/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
+    restart: unless-stopped
+    depends_on:
+      <<: *airflow-common-depends-on
+      airflow-init:
+        condition: service_completed_successfully
+
+  airflow-dag-processor:
+    <<: *airflow-common
+    container_name: datalake-airflow-dag-processor
+    command: dag-processor
+    restart: unless-stopped
+    depends_on:
+      <<: *airflow-common-depends-on
+      airflow-init:
+        condition: service_completed_successfully
+
+  airflow-worker:
+    <<: *airflow-common
+    container_name: datalake-airflow-worker
+    command: celery worker
+    restart: unless-stopped
+    depends_on:
+      <<: *airflow-common-depends-on
+      airflow-api-server:
+        condition: service_healthy
+      airflow-init:
+        condition: service_completed_successfully
+
+  airflow-triggerer:
+    <<: *airflow-common
+    container_name: datalake-airflow-triggerer
+    command: triggerer
+    restart: unless-stopped
+    depends_on:
+      <<: *airflow-common-depends-on
+      airflow-init:
+        condition: service_completed_successfully
+
+  airflow-cli:
+    <<: *airflow-common
+    profiles:
+      - debug
+    command: bash
+    depends_on:
+      <<: *airflow-common-depends-on
 volumes:
   minio_storage:
   metastore_db_data:
+  airflow_postgres_data:
 networks:
   datalake-network:
     driver: bridge
